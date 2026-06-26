@@ -76,3 +76,23 @@ async def create_ai_report(db: AsyncSession, market_query: str) -> dict[str, Any
         db.add(market)
 
     report = Report(
+        market_id=market.polymarket_id,
+        research_prob=report_data["research_probability"],
+        market_prob=report_data["market_probability"],
+        edge_pts=report_data["edge_pts"],
+        confidence=report_data["confidence"],
+        resolution_risk=report_data["resolution_risk"],
+        resolution_risk_notes=report_data["resolution_risk_notes"],
+        reasoning=report_data["reasoning"],
+        sources=report_data["sources"],
+        model="NeuroMind research engine",
+        polymarket_url=market_data["polymarket_url"],
+    )
+    db.add(report)
+    await db.commit()
+    await db.refresh(report)
+    return serialize_report(report, market)
+
+
+def serialize_report(report: Report, market: Market) -> dict[str, Any]:
+    return {
