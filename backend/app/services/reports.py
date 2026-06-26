@@ -251,3 +251,22 @@ def _market_context(market: dict[str, Any]) -> dict[str, Any]:
         "rules": market.get("rules") or "No detailed rules were returned by the market API.",
     }
 
+
+def _days_to_resolution(value: str | None) -> int | None:
+    parsed = _parse_dt(value)
+    if not parsed:
+        return None
+    delta = parsed - datetime.now(timezone.utc)
+    return max(0, delta.days)
+
+
+def _depth_signal(volume: float, liquidity: float) -> str:
+    if volume >= 1_000_000 and liquidity >= 100_000:
+        return "high-volume liquid market; require stronger evidence for a large edge"
+    if volume >= 100_000:
+        return "moderate market depth; price may still be researchable"
+    if volume > 0:
+        return "thin market; odds may be noisy and easier to move"
+    return "unknown or unavailable market depth"
+
+
