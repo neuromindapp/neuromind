@@ -173,3 +173,23 @@ def _prompt(market: dict[str, Any]) -> str:
 Return strict JSON for a NeuroMind Polymarket report.
 
 You are evaluating a prediction market as a research analyst, not writing marketing copy.
+Use the market stats packet below as hard context. Treat missing/null fields as unknown, not as zero evidence.
+
+Market stats packet:
+{json.dumps(context, indent=2)}
+
+Analysis requirements:
+- Estimate the probability of the YES outcome only.
+- Compare your probability against the live YES market probability.
+- Use base rates, incentives, current odds, liquidity/volume, time to resolution, and market rules.
+- Mention what evidence would change the estimate.
+- Separate probability risk from resolution/wording risk.
+- Do not claim certainty. If data is weak, lower confidence.
+- Keep reasoning concise but concrete; avoid generic "could go either way" language.
+
+JSON shape:
+{{
+  "research_probability": number between 0.01 and 0.99,
+  "confidence": "high" | "medium" | "low",
+  "resolution_risk": integer 1-10,
+  "resolution_risk_notes": string explaining the exact wording/settlement risk,
