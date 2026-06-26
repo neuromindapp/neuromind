@@ -134,3 +134,23 @@ def locked_summary(report: dict[str, Any]) -> dict[str, Any]:
         "research_probability",
         "edge_pts",
         "confidence",
+        "resolution_risk",
+        "volume",
+        "last_scanned_at",
+        "polymarket_url",
+        "preview",
+        "direction",
+        "yes_label",
+        "no_label",
+    ]
+    return {key: report.get(key) for key in keys if key in report}
+
+
+def _market_summary(market: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "id": market["slug"],
+        "market_id": market["id"],
+        "question": market["question"],
+        "category": market["category"],
+        "market_probability": market["market_probability"],
+        "research_probability": market["market_probability"],
