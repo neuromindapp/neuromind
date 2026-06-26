@@ -57,3 +57,22 @@ async def get_any_report(db: AsyncSession, report_id: str) -> dict[str, Any] | N
 
 
 async def create_ai_report(db: AsyncSession, market_query: str) -> dict[str, Any]:
+    market_data = await find_market(market_query)
+    ai = await generate_deep_dive(_prompt(market_data))
+    report_data = _normalize_ai(ai, market_data)
+
+    market = await db.get(Market, market_data["id"])
+    if not market:
+        market = Market(
+            polymarket_id=market_data["id"],
+            question=market_data["question"],
+            rules=market_data["rules"],
+            odds={"yes": market_data["market_probability"]},
+            volume=market_data["volume"],
+            ends_at=_parse_dt(market_data["resolves_at"]),
+            category=market_data["category"],
+            status="active",
+        )
+        db.add(market)
+
+    report = Report(
