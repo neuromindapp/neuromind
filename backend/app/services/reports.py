@@ -193,3 +193,22 @@ JSON shape:
   "confidence": "high" | "medium" | "low",
   "resolution_risk": integer 1-10,
   "resolution_risk_notes": string explaining the exact wording/settlement risk,
+  "reasoning": string with 4 short labeled sections: Estimate, Market gap, Key drivers, What could break it,
+  "sources": [{{"title": string, "url": string}}]
+}}
+"""
+
+
+def _normalize_ai(ai: dict[str, Any], market: dict[str, Any]) -> dict[str, Any]:
+    market_prob = _safe_probability(market["market_probability"], 0.5)
+    research = _safe_probability(ai.get("research_probability"), market_prob)
+    confidence = str(ai.get("confidence") or "medium").lower()
+    if confidence not in {"high", "medium", "low"}:
+        confidence = "medium"
+    return {
+        "research_probability": research,
+        "market_probability": market_prob,
+        "edge_pts": round(abs(research - market_prob) * 100),
+        "confidence": confidence,
+        "resolution_risk": _safe_int(ai.get("resolution_risk"), 5, 1, 10),
+        "resolution_risk_notes": str(ai.get("resolution_risk_notes") or "Review the market wording before acting."),
