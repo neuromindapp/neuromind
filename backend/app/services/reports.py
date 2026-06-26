@@ -154,3 +154,22 @@ def _market_summary(market: dict[str, Any]) -> dict[str, Any]:
         "category": market["category"],
         "market_probability": market["market_probability"],
         "research_probability": market["market_probability"],
+        "edge_pts": 0,
+        "confidence": "pending",
+        "resolution_risk": 5,
+        "volume": market["volume"],
+        "last_scanned_at": datetime.now(timezone.utc).isoformat(),
+        "polymarket_url": market["polymarket_url"],
+        "preview": "Unlock this market to run a fresh NeuroMind analysis.",
+        "direction": "YES",
+        "yes_label": "Yes",
+        "no_label": "No",
+    }
+
+
+def _prompt(market: dict[str, Any]) -> str:
+    context = _market_context(market)
+    return f"""
+Return strict JSON for a NeuroMind Polymarket report.
+
+You are evaluating a prediction market as a research analyst, not writing marketing copy.
