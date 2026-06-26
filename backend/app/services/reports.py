@@ -212,3 +212,22 @@ def _normalize_ai(ai: dict[str, Any], market: dict[str, Any]) -> dict[str, Any]:
         "confidence": confidence,
         "resolution_risk": _safe_int(ai.get("resolution_risk"), 5, 1, 10),
         "resolution_risk_notes": str(ai.get("resolution_risk_notes") or "Review the market wording before acting."),
+        "reasoning": str(ai.get("reasoning") or "NeuroMind generated a report for this market, but the reasoning was brief."),
+        "sources": _sources(ai.get("sources"), market),
+    }
+
+
+def _market_context(market: dict[str, Any]) -> dict[str, Any]:
+    market_probability = _safe_probability(market["market_probability"], 0.5)
+    no_probability = _safe_probability(market.get("no_probability"), 1 - market_probability)
+    best_bid = market.get("best_bid")
+    best_ask = market.get("best_ask")
+    spread = None
+    if isinstance(best_bid, (int, float)) and isinstance(best_ask, (int, float)):
+        spread = round(max(0, best_ask - best_bid), 4)
+
+    return {
+        "question": market["question"],
+        "category": market["category"],
+        "url": market["polymarket_url"],
+        "outcomes": market.get("outcomes", ["Yes", "No"]),
