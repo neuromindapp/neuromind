@@ -115,3 +115,22 @@ def serialize_report(report: Report, market: Market) -> dict[str, Any]:
         "resolution_risk_notes": report.resolution_risk_notes,
         "sources": report.sources,
         "model": report.model,
+        "created_at": report.created_at.isoformat(),
+        "direction": "YES" if report.research_prob >= report.market_prob else "NO",
+        "yes_label": "Yes",
+        "no_label": "No",
+        "odds_moved_toward_research_pts": 0,
+        "history": [{"t": "created", "market": report.market_prob, "research": report.research_prob}],
+    }
+
+
+def locked_summary(report: dict[str, Any]) -> dict[str, Any]:
+    keys = [
+        "id",
+        "market_id",
+        "question",
+        "category",
+        "market_probability",
+        "research_probability",
+        "edge_pts",
+        "confidence",
