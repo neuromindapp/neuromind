@@ -270,3 +270,23 @@ def _depth_signal(volume: float, liquidity: float) -> str:
     return "unknown or unavailable market depth"
 
 
+def _sources(value: Any, market: dict[str, Any]) -> list[dict[str, str]]:
+    sources = value if isinstance(value, list) else []
+    cleaned = [s for s in sources if isinstance(s, dict) and s.get("url") and s.get("title")]
+    if not cleaned:
+        cleaned = [{"title": "Polymarket market", "url": market["polymarket_url"]}]
+    return cleaned[:8]
+
+
+def _key_drivers(reasoning: str) -> list[str]:
+    sentences = [part.strip() for part in reasoning.replace("\n", " ").split(".") if part.strip()]
+    return [f"{sentence}." for sentence in sentences[:3]] or ["NeuroMind produced a probability estimate for this market."]
+
+
+def _parse_dt(value: str | None):
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+    except ValueError:
