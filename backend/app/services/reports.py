@@ -96,3 +96,22 @@ async def create_ai_report(db: AsyncSession, market_query: str) -> dict[str, Any
 
 def serialize_report(report: Report, market: Market) -> dict[str, Any]:
     return {
+        "id": str(report.id),
+        "market_id": market.polymarket_id,
+        "question": market.question,
+        "category": market.category,
+        "market_probability": report.market_prob,
+        "research_probability": report.research_prob,
+        "edge_pts": report.edge_pts,
+        "confidence": report.confidence,
+        "resolution_risk": report.resolution_risk,
+        "volume": market.volume,
+        "resolves_at": market.ends_at.isoformat() if market.ends_at else None,
+        "last_scanned_at": report.created_at.isoformat(),
+        "polymarket_url": report.polymarket_url,
+        "preview": report.reasoning[:180],
+        "reasoning": report.reasoning,
+        "key_drivers": _key_drivers(report.reasoning),
+        "resolution_risk_notes": report.resolution_risk_notes,
+        "sources": report.sources,
+        "model": report.model,
