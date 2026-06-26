@@ -37,3 +37,23 @@ async def get_unlocked_market_report(db: AsyncSession, user: User | None, market
     row = result.first()
     if not row:
         return None
+    report, db_market = row
+    return serialize_report(report, db_market)
+
+
+async def get_any_report(db: AsyncSession, report_id: str) -> dict[str, Any] | None:
+    if report_id in FULL_REPORTS:
+        return FULL_REPORTS[report_id]
+    parsed = _uuid_or_none(report_id)
+    if not parsed:
+        market = await find_market(report_id)
+        return _market_summary(market)
+    result = await db.execute(select(Report, Market).join(Market).where(Report.id == parsed))
+    row = result.first()
+    if not row:
+        return None
+    report, market = row
+    return serialize_report(report, market)
+
+
+async def create_ai_report(db: AsyncSession, market_query: str) -> dict[str, Any]:
