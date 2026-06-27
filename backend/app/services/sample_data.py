@@ -143,3 +143,19 @@ REPORT_DETAILS = {
             {"title": "Coinbase BTC markets", "url": "https://www.coinbase.com/price/bitcoin"},
         ],
     },
+    "33333333-3333-4333-8333-333333333333": {
+        "reasoning": (
+            "NeuroMind is more bullish than the market because frontier model release cadence has compressed, "
+            "and benchmark leadership changes more often than traders price. The main drag is not model "
+            "quality; it is whether a release qualifies as public before the resolution deadline."
+        ),
+        "key_drivers": [
+            "Multiple labs have open release windows inside the market period.",
+            "Benchmark top slots have become less durable as evaluation coverage broadens.",
+            "The market is underweighting a leaderboard update from a smaller lab.",
+        ],
+        "resolution_risk_notes": "Elevated risk. The phrase public model can create disputes around gated previews, limited rollouts, and leaderboard timing.",
+        "sources": [
+            {"title": "Polymarket market rules", "url": "https://polymarket.com/event/ai-model-benchmark"},
+            {"title": "LMSYS leaderboard", "url": "https://chat.lmsys.org/"},
+        ],
