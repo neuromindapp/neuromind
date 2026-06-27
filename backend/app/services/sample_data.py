@@ -95,3 +95,19 @@ SAMPLE_EDGES = [
         "research_probability": 0.44,
         "edge_pts": 14,
         "confidence": "medium",
+        "resolution_risk": 5,
+        "volume": 1900000,
+        "resolves_at": future_iso(126),
+        "last_scanned_at": now_iso(),
+        "direction": "NO",
+        "yes_label": "Above",
+        "no_label": "Below",
+        "polymarket_url": "https://polymarket.com/event/us-election-turnout",
+        "preview": "Registration strength is real, but the market is overextending early-cycle enthusiasm.",
+    },
+]
+
+
+REPORT_DETAILS = {
+    "11111111-1111-4111-8111-111111111111": {
+        "reasoning": (
