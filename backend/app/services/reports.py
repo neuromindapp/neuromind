@@ -309,3 +309,22 @@ def _safe_float(value: Any, default: float) -> float:
         if isinstance(value, str):
             value = value.strip().rstrip("%")
         return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _safe_int(value: Any, default: int, low: int, high: int) -> int:
+    try:
+        if isinstance(value, str):
+            value = value.strip().split()[0]
+        parsed = int(float(value))
+    except (TypeError, ValueError):
+        parsed = default
+    return max(low, min(high, parsed))
+
+
+def _uuid_or_none(value: str) -> uuid.UUID | None:
+    try:
+        return uuid.UUID(value)
+    except ValueError:
+        return None
