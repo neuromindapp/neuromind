@@ -111,3 +111,19 @@ SAMPLE_EDGES = [
 REPORT_DETAILS = {
     "11111111-1111-4111-8111-111111111111": {
         "reasoning": (
+            "NeuroMind gives the September cut a higher probability because the newest labor and credit data "
+            "are weakening faster than public commentary has repriced. The market is anchoring to prior "
+            "committee messaging instead of the reaction function implied by the last two data releases."
+        ),
+        "key_drivers": [
+            "Labor trend revisions matter more than the headline unemployment rate in this setup.",
+            "Rates-adjacent markets imply a higher cut probability than the Polymarket orderbook.",
+            "The book has stale resting liquidity near 40%, making the displayed price slow to move.",
+        ],
+        "resolution_risk_notes": "Low-to-medium risk. Settlement depends on the official FOMC target range announcement, not intraday futures pricing.",
+        "sources": [
+            {"title": "Federal Reserve calendar", "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"},
+            {"title": "Polymarket market rules", "url": "https://polymarket.com/event/fed-september-rates"},
+        ],
+    },
+    "22222222-2222-4222-8222-222222222222": {
