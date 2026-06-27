@@ -290,3 +290,22 @@ def _parse_dt(value: str | None):
         parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
         return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
     except ValueError:
+        return None
+
+
+def _clamp(value: float) -> float:
+    return max(0.01, min(0.99, value))
+
+
+def _safe_probability(value: Any, default: float) -> float:
+    parsed = _safe_float(value, default)
+    if parsed > 1:
+        parsed = parsed / 100
+    return _clamp(parsed)
+
+
+def _safe_float(value: Any, default: float) -> float:
+    try:
+        if isinstance(value, str):
+            value = value.strip().rstrip("%")
+        return float(value)
