@@ -159,3 +159,19 @@ REPORT_DETAILS = {
             {"title": "Polymarket market rules", "url": "https://polymarket.com/event/ai-model-benchmark"},
             {"title": "LMSYS leaderboard", "url": "https://chat.lmsys.org/"},
         ],
+    },
+    "44444444-4444-4444-8444-444444444444": {
+        "reasoning": (
+            "NeuroMind sees the Solana ETF approval path as underpriced. The market is focused on public "
+            "regulatory caution, but issuer behavior and amended filings point to a higher probability "
+            "than 31%. The edge is not that approval is base case; it is that the market price is too low."
+        ),
+        "key_drivers": [
+            "Issuer filing cadence has moved from exploratory to approval-prep behavior.",
+            "Comparable crypto ETF timelines suggest the current price discounts too much delay.",
+            "Liquidity is concentrated on one side, leaving YES underbid after headline scares.",
+        ],
+        "resolution_risk_notes": "Medium risk. Approval must match the exact fund type and deadline wording; delayed effective dates can matter.",
+        "sources": [
+            {"title": "SEC filings search", "url": "https://www.sec.gov/edgar/search/"},
+            {"title": "Polymarket market rules", "url": "https://polymarket.com/event/solana-etf-approval"},
