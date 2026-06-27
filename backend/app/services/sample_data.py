@@ -127,3 +127,19 @@ REPORT_DETAILS = {
         ],
     },
     "22222222-2222-4222-8222-222222222222": {
+        "reasoning": (
+            "NeuroMind is below market because the current implied path requires both sustained ETF inflows "
+            "and a volatility breakout. Positioning is crowded while spot follow-through has not confirmed "
+            "the move, so the YES price is paying for momentum before confirmation."
+        ),
+        "key_drivers": [
+            "ETF flow acceleration is weaker than the options market narrative.",
+            "Funding and basis are elevated, which reduces forward return quality.",
+            "The ATH definition is straightforward, so probability edge dominates wording risk.",
+        ],
+        "resolution_risk_notes": "Low risk. The market is likely resolved against widely quoted BTC spot highs, with minimal wording ambiguity.",
+        "sources": [
+            {"title": "Polymarket market rules", "url": "https://polymarket.com/event/bitcoin-ath-q4"},
+            {"title": "Coinbase BTC markets", "url": "https://www.coinbase.com/price/bitcoin"},
+        ],
+    },
