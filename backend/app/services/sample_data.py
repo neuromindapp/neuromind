@@ -207,3 +207,19 @@ FULL_REPORTS = {
         "history": [
             {"t": "scan-3", "market": max(0.01, edge["market_probability"] - 0.04), "research": max(0.01, edge["research_probability"] - 0.02)},
             {"t": "scan-2", "market": max(0.01, edge["market_probability"] - 0.02), "research": max(0.01, edge["research_probability"] - 0.01)},
+            {"t": "scan-1", "market": edge["market_probability"], "research": edge["research_probability"]},
+        ],
+    }
+    for edge in SAMPLE_EDGES
+}
+
+
+RESOLVED_CALLS = [
+    {
+        "market": "Will CPI print below consensus?",
+        "category": "econ",
+        "research_probability": 0.68,
+        "market_probability": 0.51,
+        "edge_pts": 17,
+        "outcome": "YES",
+        "correct": True,
