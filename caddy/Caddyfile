@@ -1,0 +1,25 @@
+{
+	email admin@neuro-mind.app
+}
+
+neuro-mind.app, www.neuro-mind.app {
+	root * /srv/frontend
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+
+	handle {
+		try_files {path} /index.html
+		file_server
+	}
+}
+
+docs.neuro-mind.app {
+	root * /srv/docs
+	encode zstd gzip
+	try_files {path} /index.html
+	file_server
+}
+
