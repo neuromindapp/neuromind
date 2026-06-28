@@ -175,3 +175,19 @@ REPORT_DETAILS = {
         "sources": [
             {"title": "SEC filings search", "url": "https://www.sec.gov/edgar/search/"},
             {"title": "Polymarket market rules", "url": "https://polymarket.com/event/solana-etf-approval"},
+        ],
+    },
+    "55555555-5555-4555-8555-555555555555": {
+        "reasoning": (
+            "NeuroMind is below market because turnout narratives are extrapolating registration headlines "
+            "without adjusting for eligibility, geography, and drop-off. The previous cycle remains a "
+            "high bar, and the market is not charging enough for normalization risk."
+        ),
+        "key_drivers": [
+            "Registration strength is uneven across states that drive the aggregate number.",
+            "Early enthusiasm data has historically overstated final turnout for comparable cycles.",
+            "Resolution depends on final reported turnout, which can lag and create timing risk.",
+        ],
+        "resolution_risk_notes": "Medium risk. The official source and the definition of turnout versus ballots cast should be checked before sizing.",
+        "sources": [
+            {"title": "Election Assistance Commission", "url": "https://www.eac.gov/"},
