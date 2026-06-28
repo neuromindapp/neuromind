@@ -191,3 +191,19 @@ REPORT_DETAILS = {
         "resolution_risk_notes": "Medium risk. The official source and the definition of turnout versus ballots cast should be checked before sizing.",
         "sources": [
             {"title": "Election Assistance Commission", "url": "https://www.eac.gov/"},
+            {"title": "Polymarket market rules", "url": "https://polymarket.com/event/us-election-turnout"},
+        ],
+    },
+}
+
+
+FULL_REPORTS = {
+    edge["id"]: {
+        **edge,
+        **REPORT_DETAILS[edge["id"]],
+        "model": "NeuroMind research engine",
+        "created_at": now_iso(),
+        "odds_moved_toward_research_pts": max(1, min(7, round(edge["edge_pts"] / 3))),
+        "history": [
+            {"t": "scan-3", "market": max(0.01, edge["market_probability"] - 0.04), "research": max(0.01, edge["research_probability"] - 0.02)},
+            {"t": "scan-2", "market": max(0.01, edge["market_probability"] - 0.02), "research": max(0.01, edge["research_probability"] - 0.01)},
