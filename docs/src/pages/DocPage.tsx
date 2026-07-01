@@ -84,3 +84,31 @@ export const docs: Doc[] = [
         body: [
           'Use the Login button in the app header. NeuroMind supports Solana wallets only. Your wallet is used for login, quota ownership, holder checks, and SOL credit payments.',
           'NeuroMind does not ask for private keys and does not place trades from your wallet.',
+        ],
+      },
+      {
+        id: 'first-report',
+        title: 'Unlock your first report',
+        bullets: [
+          'Choose a market from the Edge Board.',
+          'Read the public preview, odds, research estimate, confidence, and resolution risk.',
+          'Open the report page and unlock it with an available free dive, holder daily, or credit.',
+          'Read the reasoning and sources, then decide independently whether to act on Polymarket.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/access-model',
+    eyebrow: 'Access',
+    title: 'Access Model',
+    lede: 'The board is free to browse. Full report reasoning is the paid or quota-gated resource.',
+    sections: [
+      {
+        id: 'what-is-free',
+        title: 'What is free',
+        body: [
+          'Anyone can view the Edge Board, market questions, public odds, research estimates, edge points, confidence, resolution risk, volume, freshness, and locked report previews.',
+          'The Track Record is also public so users can judge resolved calls without connecting a wallet.',
+        ],
+      },
