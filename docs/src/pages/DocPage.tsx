@@ -226,3 +226,31 @@ export const docs: Doc[] = [
   {
     path: '/track-record',
     eyebrow: 'Performance',
+    title: 'Track Record',
+    lede: 'The public page for judging resolved NeuroMind calls.',
+    sections: [
+      {
+        id: 'why-it-matters',
+        title: 'Why it matters',
+        body: [
+          'Prediction research should be judged after markets resolve. The Track Record shows wins and losses so users can evaluate whether research estimates are useful over time.',
+          'Do not judge the product from one report. Look at resolved calls, confidence buckets, average edge, and calibration across a growing sample.',
+        ],
+      },
+      {
+        id: 'headline-stats',
+        title: 'Headline stats',
+        bullets: [
+          'Resolved calls: total reports with known outcomes.',
+          'Hit rate: percentage of resolved calls that were directionally correct.',
+          'High-confidence hit rate: hit rate on reports marked high confidence.',
+          'Simulated PnL: a simple tracking metric for how flagged edges would have performed under the displayed assumptions.',
+          'Average edge: the average edge size on winning and losing calls.',
+        ],
+      },
+      {
+        id: 'calibration',
+        title: 'Calibration',
+        body: [
+          'Calibration asks whether probabilities behave like probabilities. If NeuroMind says 70% often enough, roughly 70% of comparable calls should resolve correctly over a large sample.',
+          'Calibration is more important than sounding confident. A model that is honest about uncertainty is more useful than one that overstates every edge.',
