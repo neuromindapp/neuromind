@@ -169,3 +169,31 @@ export const docs: Doc[] = [
       {
         id: 'how-to-filter',
         title: 'How to filter',
+        body: [
+          'Use filters to narrow the board to your style: categories you understand, minimum volume, confidence levels, resolution windows, or direction. Direction means whether NeuroMind is more bullish YES or more bullish NO than the market.',
+          'A high edge with high resolution risk should be treated differently from a high edge with low resolution risk. The board exposes both so you do not over-focus on the headline edge number.',
+        ],
+      },
+      {
+        id: 'search',
+        title: 'Market search',
+        body: [
+          'You can search by market text or paste a Polymarket URL. If a recent report exists, NeuroMind takes you to it. If not, the app can start a new report from the board flow.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/reports',
+    eyebrow: 'Product',
+    title: 'Reports',
+    lede: 'A report is the full research view for one market.',
+    sections: [
+      {
+        id: 'report-header',
+        title: 'Report header',
+        body: [
+          'The top of a report shows the market question, Polymarket link, market odds, research estimate, edge points, confidence, volume, and resolution-risk score.',
+          'Use this section to decide whether the report is saying YES is underpriced, NO is underpriced, or the market is too risky to trust despite the probability gap.',
+        ],
+      },
