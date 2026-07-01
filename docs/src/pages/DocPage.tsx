@@ -197,3 +197,32 @@ export const docs: Doc[] = [
           'Use this section to decide whether the report is saying YES is underpriced, NO is underpriced, or the market is too risky to trust despite the probability gap.',
         ],
       },
+      {
+        id: 'reasoning',
+        title: 'Reasoning',
+        body: [
+          'The reasoning section explains why NeuroMind disagrees with the market. It should identify the key drivers, what the market may be missing, what assumptions matter most, and which developments could change the estimate.',
+          'A good report is not just a number. It should make the probability estimate legible enough that you can disagree with it intelligently.',
+        ],
+      },
+      {
+        id: 'sources',
+        title: 'Sources',
+        body: [
+          'Sources show the public material NeuroMind used to form the report: market rules, official references, relevant data, news, or context pages.',
+          'Sources are included so users can verify claims, inspect the original market wording, and avoid blindly trusting a summary.',
+        ],
+      },
+      {
+        id: 'resolution-risk',
+        title: 'Resolution risk',
+        body: [
+          'Resolution risk is separate from probability. A market can have a real edge and still be dangerous if the wording is vague, the source of truth is unclear, or the outcome can resolve against the intuitive interpretation.',
+          'Read this section before acting on any market with a high risk score. It is designed to surface the kinds of rule traps prediction-market users often miss.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/track-record',
+    eyebrow: 'Performance',
