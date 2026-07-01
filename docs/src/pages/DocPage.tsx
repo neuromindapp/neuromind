@@ -112,3 +112,32 @@ export const docs: Doc[] = [
           'The Track Record is also public so users can judge resolved calls without connecting a wallet.',
         ],
       },
+      {
+        id: 'unlock-options',
+        title: 'Unlock options',
+        bullets: [
+          'First wallet connection: 5 lifetime reports.',
+          '10k+ $NEUROMIND holders: 1 additional report per day.',
+          'Paid credits: buy report credits with SOL after free access is used.',
+        ],
+      },
+      {
+        id: 'quota-priority',
+        title: 'Quota priority',
+        body: [
+          'When you unlock a report, NeuroMind first checks for an available holder daily, then remaining free dives, then paid credits. If none are available, the app shows the payment flow.',
+          'Holder daily access resets at 00:00 UTC. Free dives are lifetime per wallet and do not reset.',
+        ],
+      },
+      {
+        id: 'locked-previews',
+        title: 'Locked previews',
+        body: [
+          'Locked reports show enough context to decide whether the market is interesting, but the full reasoning, source list, and detailed resolution-risk notes remain unavailable until unlock.',
+          'This keeps the paid report valuable while still letting users compare markets before spending a quota unit.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/edge-board',
