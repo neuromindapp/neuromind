@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 8% 3%;
+    --foreground: 210 38% 96%;
+    --card: 222 38% 7%;
+    --card-foreground: 210 38% 96%;
+    --primary: 197 100% 62%;
+    --primary-foreground: 222 52% 4%;
+    --secondary: 218 30% 12%;
+    --secondary-foreground: 210 38% 96%;
+    --muted: 220 28% 10%;
+    --muted-foreground: 214 17% 66%;
+    --accent: 198 100% 58%;
+    --accent-foreground: 222 52% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 16%;
+    --input: 209 40% 18%;
+    --ring: 198 100% 58%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: #050506;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #d9e7ff;
+    color: #050506;
+  }
+}
+
+#doc-content p {
+  @apply text-[15px] leading-[1.75] text-slate-400;
+}
+
+.docs-panel {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(9, 10, 13, 0.9);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-semibold text-black transition-all hover:bg-slate-200 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] px-5 text-sm font-semibold text-slate-100 transition-all hover:border-white/20 hover:bg-white/[0.055] active:scale-[0.98];
+  }
+}
+
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #050506; }
+::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.32); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(203,213,225,0.48); }
