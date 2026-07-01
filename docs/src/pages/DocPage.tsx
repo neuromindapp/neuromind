@@ -141,3 +141,31 @@ export const docs: Doc[] = [
   },
   {
     path: '/edge-board',
+    eyebrow: 'Product',
+    title: 'Edge Board',
+    lede: 'The main screen for finding markets where NeuroMind disagrees with Polymarket odds.',
+    sections: [
+      {
+        id: 'what-you-see',
+        title: 'What you see',
+        body: [
+          'Each row represents a scanned Polymarket market with a report available or ready to unlock. The YES/NO bar shows market odds in a Polymarket-style format, while the research marker shows the independent estimate.',
+          'The most important number is edge points: the absolute gap between market probability and research probability. Bigger edge points mean stronger disagreement, not guaranteed profit.',
+        ],
+      },
+      {
+        id: 'columns',
+        title: 'Key fields',
+        bullets: [
+          'Market odds: what Polymarket is currently implying.',
+          'research estimate: NeuroMind probability estimate for the same outcome.',
+          'Edge points: the difference between market odds and research estimate.',
+          'Confidence: how strongly NeuroMind trusts the estimate.',
+          'Resolution risk: how likely wording or settlement rules can create a non-obvious outcome.',
+          'Volume: how much activity exists around the market.',
+          'Freshness: when the market was last scanned.',
+        ],
+      },
+      {
+        id: 'how-to-filter',
+        title: 'How to filter',
