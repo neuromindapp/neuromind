@@ -55,3 +55,32 @@ export const docs: Doc[] = [
           'Unlock a report only when the preview and market setup are relevant to you.',
           'Use the Polymarket link inside the report if you want to trade directly on Polymarket.',
           'Review the Track Record regularly so you know how research estimates have performed after resolution.',
+        ],
+      },
+    ],
+    next: [
+      { to: '/edge-board', label: 'Edge Board', desc: 'How to read the market ranking table.' },
+      { to: '/reports', label: 'Reports', desc: 'What you get when you unlock a report.' },
+      { to: '/access-model', label: 'Access Model', desc: 'Free tries, holder dailies, and paid credits.' },
+    ],
+  },
+  {
+    path: '/getting-started',
+    eyebrow: 'Guide',
+    title: 'Getting Started',
+    lede: 'The fastest path from first visit to reading your first unlocked report.',
+    sections: [
+      {
+        id: 'first-visit',
+        title: 'First visit',
+        body: [
+          'You can browse the Edge Board and Track Record without connecting a wallet. This lets you inspect live market rankings, see example previews, and judge whether the product is useful before unlocking anything.',
+          'A wallet is only needed when you want to unlock full report reasoning, use free dives, use holder access, or buy credits.',
+        ],
+      },
+      {
+        id: 'connect-wallet',
+        title: 'Connect a Solana wallet',
+        body: [
+          'Use the Login button in the app header. NeuroMind supports Solana wallets only. Your wallet is used for login, quota ownership, holder checks, and SOL credit payments.',
+          'NeuroMind does not ask for private keys and does not place trades from your wallet.',
