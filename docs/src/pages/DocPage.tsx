@@ -339,3 +339,32 @@ export const docs: Doc[] = [
       },
     ],
   },
+  {
+    path: '/methodology',
+    eyebrow: 'Research',
+    title: 'Methodology',
+    lede: 'How to understand research estimates, edge points, confidence, and resolution risk.',
+    sections: [
+      { id: 'probability-first', title: 'Probability first', body: ['NeuroMind starts with the question: what probability should this market imply if the user reads the rules, evidence, and context carefully?', 'The estimate is then compared against market odds. The difference becomes the edge score. A positive edge does not guarantee the outcome; it means NeuroMind estimates the market price is miscalibrated.'] },
+      { id: 'confidence', title: 'Confidence', body: ['Confidence describes how sturdy the estimate is. High confidence means the evidence is cleaner, the market rules are clearer, or the setup has stronger historical/base-rate support.', 'Low confidence does not always mean no edge. It means more can break the estimate, so users should size caution accordingly.'] },
+      { id: 'resolution-risk', title: 'Resolution risk', body: ['Resolution risk asks whether the market may settle in a way that surprises casual readers. This includes ambiguous wording, disputed sources, timing edge cases, or definitions that differ from common intuition.', 'NeuroMind exposes this separately because many prediction-market mistakes come from being right about reality but wrong about the market wording.'] },
+      { id: 'timestamped-calls', title: 'Timestamped calls', body: ['A report should be read as a snapshot. Market odds can move after the report is created, but the original estimate and context remain the basis for track-record evaluation.'] },
+    ],
+  },
+  {
+    path: '/faq',
+    eyebrow: 'Help',
+    title: 'FAQ',
+    lede: 'Common user questions about NeuroMind.',
+    sections: [
+      { id: 'is-this-financial-advice', title: 'Is this financial advice?', body: ['No. NeuroMind is a research tool. Reports can be wrong, markets are risky, and users are responsible for their own decisions.'] },
+      { id: 'does-neuromind-place-bets', title: 'Does NeuroMind place bets?', body: ['No. NeuroMind links to Polymarket. Any trading action happens directly on Polymarket, not inside NeuroMind.'] },
+      { id: 'why-connect-wallet', title: 'Why connect a wallet?', body: ['Wallets are used for login, free dives, holder checks, paid credits, and usage history. Browsing public edges and the track record does not require login.'] },
+      { id: 'what-if-report-is-wrong', title: 'What if a report is wrong?', body: ['Wrong calls remain part of the track record. The product is meant to be judged by resolved performance across many reports, not by any single prediction.'] },
+    ],
+  },
+  {
+    path: '/terms',
+    eyebrow: 'Legal',
+    title: 'Terms',
+    lede: 'Terms for using NeuroMind as a research product.',
