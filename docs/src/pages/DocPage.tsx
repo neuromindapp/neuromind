@@ -311,3 +311,31 @@ export const docs: Doc[] = [
       {
         id: 'credit-packs',
         title: 'Credit packs',
+        body: [
+          'Credit packs are shown on the account page. Choose a pack, generate a payment intent, then send the displayed SOL amount with the displayed memo.',
+          'Each credit unlocks one full report. Credits remain tied to the wallet that generated the payment intent.',
+        ],
+      },
+      {
+        id: 'memo',
+        title: 'Why the memo matters',
+        body: [
+          'The memo is how NeuroMind matches a payment to your wallet and credit pack. If you send SOL without the correct memo, credit confirmation may fail or require manual support.',
+        ],
+      },
+      {
+        id: 'confirmation',
+        title: 'Confirmation',
+        body: [
+          'After payment, the account page should show the credit update once the transaction is confirmed and matched. Keep the transaction signature if you need support.',
+        ],
+      },
+      {
+        id: 'no-custody',
+        title: 'No product-side custody',
+        body: [
+          'Credits only unlock NeuroMind research. They do not represent bets, positions, yield, or custody of market funds.',
+        ],
+      },
+    ],
+  },
