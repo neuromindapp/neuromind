@@ -453,3 +453,31 @@ export function DocPage({ doc }: { doc: Doc }) {
                       {card.body}
                     </p>
                   </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
+
+      {doc.next && (
+        <section>
+          <h2 id="next-steps" className="scroll-mt-24 text-lg font-semibold tracking-[-0.01em] text-foreground">
+            Next steps
+          </h2>
+          <div className="mt-5 space-y-2">
+            {doc.next.map((link) => (
+              <Link key={link.to} to={link.to} className="group relative flex items-center justify-between overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 transition-colors hover:border-white/20 hover:bg-white/[0.045]">
+                <div className="relative">
+                  <p className="text-[14px] font-medium text-foreground">{link.label}</p>
+                  <p className="mt-0.5 text-[12px] text-muted-foreground transition-colors duration-300 group-hover:text-foreground/60">{link.desc}</p>
+                </div>
+                <ArrowRight size={14} className="relative text-slate-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white" />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+    </>
+  )
+}
