@@ -368,3 +368,31 @@ export const docs: Doc[] = [
     eyebrow: 'Legal',
     title: 'Terms',
     lede: 'Terms for using NeuroMind as a research product.',
+    sections: [
+      { id: 'research-only', title: 'Research only', body: ['NeuroMind provides research, market summaries, probability estimates, source links, and resolution-risk analysis. It does not execute trades, manage funds, custody assets, or guarantee outcomes.', 'You are responsible for deciding whether to use any information from NeuroMind and for any action you take on third-party platforms.'] },
+      { id: 'eligibility', title: 'Eligibility and compliance', body: ['You are responsible for following the laws and rules that apply to you, including rules related to prediction markets, online services, taxes, and wallet usage.', 'If you are not allowed to use Polymarket or similar services in your jurisdiction, NeuroMind does not give you permission to do so.'] },
+      { id: 'credits-and-access', title: 'Credits and access', body: ['Credits unlock access to NeuroMind reports. Credits are not investment products, cash balances, betting positions, or claims on future returns.', 'Free dives, holder access, and credits may be limited, adjusted, or revoked in cases of abuse, fraud, technical issues, or attempts to bypass access controls.'] },
+      { id: 'third-party-links', title: 'Third-party links', body: ['Reports may link to Polymarket or external sources. NeuroMind is not responsible for third-party websites, market availability, settlement decisions, fees, outages, or policy changes.'] },
+      { id: 'no-warranty', title: 'No warranty', body: ['NeuroMind is provided as-is. Reports may contain errors, outdated information, incomplete source coverage, or incorrect estimates. You use the product at your own risk.'] },
+    ],
+  },
+  {
+    path: '/privacy',
+    eyebrow: 'Legal',
+    title: 'Privacy',
+    lede: 'What NeuroMind needs to operate wallet-based access.',
+    sections: [
+      { id: 'wallet-data', title: 'Wallet data', body: ['NeuroMind uses your wallet public address to identify your account, track free dives, check holder eligibility, record credits, and show usage history.', 'A public wallet address is not a private key. NeuroMind never asks for or stores private keys or seed phrases.'] },
+      { id: 'usage-data', title: 'Usage data', body: ['NeuroMind may store which reports you unlock, when quota is consumed, payment intents, credit balances, and support-relevant transaction references.', 'This data is used to operate access, prevent quota abuse, troubleshoot payments, and improve the product experience.'] },
+      { id: 'payments', title: 'Payments', body: ['SOL payments are public blockchain transactions. NeuroMind uses payment amount, memo, wallet address, and confirmation status to grant credits.', 'Do not send sensitive personal information in payment memos or wallet transaction notes.'] },
+      { id: 'third-party-services', title: 'Third-party services', body: ['Wallet connection, blockchain confirmation, analytics, hosting, and linked sources may involve third-party services. Those services may process data under their own policies.'] },
+      { id: 'security', title: 'Security', body: ['Keep your wallet secure. NeuroMind cannot recover lost wallets, reverse blockchain transactions, or protect you from malicious browser extensions or phishing pages outside the official app.'] },
+    ],
+  },
+  {
+    path: '/disclaimer',
+    eyebrow: 'Legal',
+    title: 'Disclaimer',
+    lede: 'Important limits of NeuroMind research.',
+    sections: [
+      { id: 'not-advice', title: 'Not financial advice', body: ['NeuroMind reports are informational research outputs. They are not financial, investment, legal, tax, or trading advice.', 'Prediction markets can be volatile, illiquid, confusing, or unavailable. You can lose money even when a report appears well supported.'] },
