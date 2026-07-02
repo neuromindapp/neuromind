@@ -425,3 +425,31 @@ export function DocPage({ doc }: { doc: Doc }) {
           </h2>
           {section.body && (
             <div className="mt-4 space-y-4">
+              {section.body.map((p) => (
+                <p key={p} className="text-[15px] leading-[1.75] text-muted-foreground">{p}</p>
+              ))}
+            </div>
+          )}
+          {section.bullets && (
+            <ul className="mt-4 space-y-2">
+              {section.bullets.map((item) => (
+                <li key={item} className="relative pl-5 text-[15px] leading-[1.75] text-muted-foreground">
+                  <span className="absolute left-0 top-3 h-1.5 w-1.5 rounded-full bg-slate-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
+          {section.cards && (
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {section.cards.map((card) => (
+                <div key={card.title} className="group relative overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.025] p-5 transition-colors hover:border-white/20 hover:bg-white/[0.045]">
+                  <div className="relative">
+                    <div className="mb-2.5 flex items-center gap-2.5">
+                      <span className="h-1.5 w-1.5 rounded-full transition-transform duration-300 group-hover:scale-150" style={{ backgroundColor: card.color }} />
+                      <span className="text-[14px] font-medium text-foreground">{card.title}</span>
+                    </div>
+                    <p className="text-[13px] leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/60">
+                      {card.body}
+                    </p>
+                  </div>
