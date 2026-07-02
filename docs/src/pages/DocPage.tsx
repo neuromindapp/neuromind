@@ -283,3 +283,31 @@ export const docs: Doc[] = [
         id: 'holder-status',
         title: 'Holder status',
         body: [
+          'If your connected wallet holds 10k+ $NEUROMIND, the account page shows holder eligibility and the daily access state. Holder access is checked again when you unlock reports, so the status reflects current wallet ownership.',
+        ],
+      },
+      {
+        id: 'usage-history',
+        title: 'Usage history',
+        body: [
+          'Usage history shows which quota source was consumed for prior reports: free trial, holder daily, or paid credit. Use it to track where your access went.',
+        ],
+      },
+      {
+        id: 'wallet-safety',
+        title: 'Wallet safety',
+        body: [
+          'NeuroMind uses wallet connection for identity and access. It does not need your private key and does not trade for you. Any market action happens on Polymarket, outside NeuroMind.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/payments',
+    eyebrow: 'Credits',
+    title: 'Payments',
+    lede: 'Buy report credits with SOL when free access is exhausted.',
+    sections: [
+      {
+        id: 'credit-packs',
+        title: 'Credit packs',
