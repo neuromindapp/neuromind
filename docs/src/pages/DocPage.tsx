@@ -254,3 +254,32 @@ export const docs: Doc[] = [
         body: [
           'Calibration asks whether probabilities behave like probabilities. If NeuroMind says 70% often enough, roughly 70% of comparable calls should resolve correctly over a large sample.',
           'Calibration is more important than sounding confident. A model that is honest about uncertainty is more useful than one that overstates every edge.',
+        ],
+      },
+      {
+        id: 'losses',
+        title: 'Losses stay visible',
+        body: [
+          'Misses are part of the record and should not be hidden. A transparent record makes it easier to understand which categories, confidence levels, or market types NeuroMind handles best.',
+        ],
+      },
+    ],
+  },
+  {
+    path: '/account',
+    eyebrow: 'Product',
+    title: 'Account',
+    lede: 'Your wallet-linked view for quota, credits, and usage.',
+    sections: [
+      {
+        id: 'quota-status',
+        title: 'Quota status',
+        body: [
+          'The account page shows free dives left, paid credits, and whether your holder daily is available. This is the first place to check if an unlock fails or asks for payment.',
+          'Free dives are tied to the connected wallet. Credits and usage history are also tied to that wallet.',
+        ],
+      },
+      {
+        id: 'holder-status',
+        title: 'Holder status',
+        body: [
