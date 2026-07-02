@@ -396,3 +396,32 @@ export const docs: Doc[] = [
     lede: 'Important limits of NeuroMind research.',
     sections: [
       { id: 'not-advice', title: 'Not financial advice', body: ['NeuroMind reports are informational research outputs. They are not financial, investment, legal, tax, or trading advice.', 'Prediction markets can be volatile, illiquid, confusing, or unavailable. You can lose money even when a report appears well supported.'] },
+      { id: 'model-risk', title: 'Model risk', body: ['research estimates can be wrong. The model may miss information, overweight weak signals, misread source quality, or misunderstand market wording.', 'Confidence labels and edge points are research aids, not guarantees.'] },
+      { id: 'resolution-risk', title: 'Resolution risk', body: ['A market can resolve differently from the intuitive real-world outcome. Always read the market rules, resolution criteria, and source-of-truth language before acting.'] },
+      { id: 'no-affiliation', title: 'No affiliation', body: ['NeuroMind is an independent research tool and is not affiliated with Polymarket. Polymarket markets, rules, settlement, availability, and links are controlled by Polymarket or its relevant market processes.'] },
+    ],
+  },
+]
+
+export function DocPage({ doc }: { doc: Doc }) {
+  return (
+    <>
+      <div className="mb-16">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+          {doc.eyebrow}
+        </p>
+        <h1 className="mt-2 text-[clamp(1.8rem,4vw,2.5rem)] font-bold leading-[1.15] tracking-[-0.03em] text-foreground">
+          {doc.title}
+        </h1>
+        <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-muted-foreground">
+          {doc.lede}
+        </p>
+      </div>
+
+      {doc.sections.map((section) => (
+        <section key={section.id} className="mb-16">
+          <h2 id={section.id} className="scroll-mt-24 text-lg font-semibold tracking-[-0.01em] text-foreground">
+            {section.title}
+          </h2>
+          {section.body && (
+            <div className="mt-4 space-y-4">
