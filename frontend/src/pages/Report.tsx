@@ -49,3 +49,15 @@ export default function Report() {
     }
   }
 
+  return (
+    <div className="mx-auto max-w-6xl">
+      <div className="mb-8 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{report.category} / {report.confidence}</p>
+          <h1 className="mt-3 max-w-4xl text-[clamp(2rem,4vw,4rem)] font-semibold leading-[1] tracking-[-0.04em]">
+            {report.question}
+          </h1>
+        </div>
+        <a href={report.polymarket_url} target="_blank" rel="noreferrer" className="btn-secondary self-start lg:self-auto">
+          Open Polymarket <ArrowUpRight size={16} />
+        </a>
