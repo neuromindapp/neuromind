@@ -74,3 +74,16 @@ export default function Report() {
 
       {payload.locked ? (
         <section className="mt-8 rounded-2xl border border-white/[0.08] bg-[#090a0d] p-7">
+          <div className="flex items-center gap-3 text-slate-300">
+            <Lock size={18} />
+            <span className="text-sm font-semibold uppercase tracking-[0.12em]">Report locked</span>
+          </div>
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-500">
+            {report.preview} Unlock the full reasoning, source review, rule wording risk, and estimate history with one report credit.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <button onClick={unlockReport} disabled={unlocking || auth.isLoading} className="btn-primary disabled:opacity-60" type="button">
+              <Unlock size={16} /> {auth.authenticated ? (unlocking ? 'Unlocking...' : 'Unlock report') : 'Login to unlock'}
+            </button>
+            <Link to="/edges" className="btn-secondary">Back to board</Link>
+          </div>
