@@ -11,3 +11,16 @@ interface ReportPayload {
 }
 
 export default function Report() {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const auth = useAuth()
+  const [payload, setPayload] = useState<ReportPayload | null>(null)
+  const [error, setError] = useState('')
+  const [unlocking, setUnlocking] = useState(false)
+
+  useEffect(() => {
+    if (!id) return
+    setPayload(null)
+    setError('')
+    api.get<ReportPayload>(`/reports/${id}`).then(setPayload).catch((err) => setError(err.message))
+  }, [id, auth.user?.id])
