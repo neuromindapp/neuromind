@@ -99,3 +99,16 @@ export default function Report() {
                 <p key={driver} className="border-l border-white/15 pl-4 text-sm leading-6 text-slate-500">{driver}</p>
               ))}
             </div>
+          </div>
+          <div className="space-y-6">
+            <SidePanel title="Resolution risk">
+              <p className="text-sm leading-7 text-slate-500">{report.resolution_risk_notes}</p>
+            </SidePanel>
+            <SidePanel title="Sources">
+              <div className="space-y-3">
+                {report.sources.map((source: { title: string; url: string }) => (
+                  <a key={source.url} href={source.url} className="block text-sm font-medium text-slate-300 transition-colors hover:text-white">
+                    {source.title}
+                  </a>
+                ))}
+              </div>
