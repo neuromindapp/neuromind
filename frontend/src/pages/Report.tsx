@@ -61,3 +61,16 @@ export default function Report() {
         <a href={report.polymarket_url} target="_blank" rel="noreferrer" className="btn-secondary self-start lg:self-auto">
           Open Polymarket <ArrowUpRight size={16} />
         </a>
+      </div>
+
+      <section className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr]">
+        <ProbabilityCard report={report} />
+        <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+          <Metric label="Edge" value={`${report.edge_pts} pts`} />
+          <Metric label="Resolution risk" value={`${report.resolution_risk}/10`} />
+          <Metric label="Volume" value={compactUsd(report.volume || 0)} />
+        </div>
+      </section>
+
+      {payload.locked ? (
+        <section className="mt-8 rounded-2xl border border-white/[0.08] bg-[#090a0d] p-7">
