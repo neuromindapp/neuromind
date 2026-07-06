@@ -112,3 +112,15 @@ export default function Report() {
                   </a>
                 ))}
               </div>
+            </SidePanel>
+            <SidePanel title="Model notes">
+              <p className="text-sm text-slate-500">Model: {report.model}</p>
+              <p className="mt-2 text-sm text-slate-500">Odds moved {report.odds_moved_toward_research_pts} pts toward the research estimate since scan.</p>
+            </SidePanel>
+          </div>
+        </section>
+      )}
+    </div>
+  )
+}
+
