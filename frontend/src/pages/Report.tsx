@@ -137,3 +137,16 @@ function ProbabilityCard({ report }: { report: any }) {
           <p className="mt-2 text-4xl font-semibold text-white">{pct(report.market_probability)}</p>
         </div>
         <div className="sm:text-right">
+          <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">Research estimate</p>
+          <p className="mt-2 text-4xl font-semibold text-sky-100">{pct(report.research_probability)}</p>
+        </div>
+      </div>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <Outcome label={report.yes_label || 'Yes'} price={`${yes}c`} />
+        <Outcome label={report.no_label || 'No'} price={`${no}c`} />
+      </div>
+      <div className="relative mt-5 h-2 overflow-hidden rounded-full bg-white/[0.08]">
+        <div className="absolute inset-y-0 left-0 bg-slate-400/55" style={{ width: `${yes}%` }} />
+        <div className="absolute inset-y-[-3px] w-px bg-white" style={{ left: `${model}%` }} />
+      </div>
+      <div className="mt-3 flex items-center justify-between text-[11px] text-slate-500">
