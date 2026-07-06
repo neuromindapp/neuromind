@@ -124,3 +124,16 @@ export default function Report() {
   )
 }
 
+function ProbabilityCard({ report }: { report: any }) {
+  const yes = Math.round(report.market_probability * 100)
+  const no = 100 - yes
+  const model = Math.round(report.research_probability * 100)
+
+  return (
+    <div className="rounded-2xl border border-white/[0.08] bg-[#090a0d] p-6">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">Market odds</p>
+          <p className="mt-2 text-4xl font-semibold text-white">{pct(report.market_probability)}</p>
+        </div>
+        <div className="sm:text-right">
