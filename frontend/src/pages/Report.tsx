@@ -36,3 +36,16 @@ export default function Report() {
       auth.login()
       return
     }
+    setUnlocking(true)
+    setError('')
+    try {
+      const next = await api.post<ReportPayload & { quota_source: string }>(`/reports/${id}/unlock`)
+      setPayload({ locked: false, report: next.report })
+      if (next.report.id && next.report.id !== id) navigate(`/report/${next.report.id}`, { replace: true })
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not unlock report')
+    } finally {
+      setUnlocking(false)
+    }
+  }
+
