@@ -87,3 +87,15 @@ export default function Report() {
             </button>
             <Link to="/edges" className="btn-secondary">Back to board</Link>
           </div>
+        </section>
+      ) : (
+        <section className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#090a0d] p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">Analysis brief</p>
+            <h2 className="mt-2 text-2xl font-semibold">Reasoning</h2>
+            <p className="mt-4 whitespace-pre-line leading-8 text-slate-400">{report.reasoning}</p>
+            <div className="mt-6 space-y-3">
+              {report.key_drivers.map((driver: string) => (
+                <p key={driver} className="border-l border-white/15 pl-4 text-sm leading-6 text-slate-500">{driver}</p>
+              ))}
+            </div>
