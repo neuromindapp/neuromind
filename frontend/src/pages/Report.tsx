@@ -162,3 +162,16 @@ function ProbabilityCard({ report }: { report: any }) {
 }
 
 function Outcome({ label, price }: { label: string; price: string }) {
+  return (
+    <div className="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4">
+      <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">{label}</p>
+      <p className="mt-2 text-2xl font-semibold text-white">{price}</p>
+    </div>
+  )
+}
+
+function Metric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-white/[0.08] bg-[#090a0d] p-5">
+      <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">{label}</p>
+      <p className="mt-3 text-3xl font-semibold text-white">{value}</p>
