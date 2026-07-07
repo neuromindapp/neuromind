@@ -150,3 +150,15 @@ function ProbabilityCard({ report }: { report: any }) {
         <div className="absolute inset-y-[-3px] w-px bg-white" style={{ left: `${model}%` }} />
       </div>
       <div className="mt-3 flex items-center justify-between text-[11px] text-slate-500">
+        <span>YES {yes}%</span>
+        <span>Research {model}%</span>
+        <span>NO {no}%</span>
+      </div>
+      <p className="mt-4 text-sm text-slate-500">
+        The research estimate is {report.direction === 'YES' ? 'more bullish YES' : 'more bullish NO'} than the market.
+      </p>
+    </div>
+  )
+}
+
+function Outcome({ label, price }: { label: string; price: string }) {
