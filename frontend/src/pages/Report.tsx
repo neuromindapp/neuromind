@@ -175,3 +175,15 @@ function Metric({ label, value }: { label: string; value: string }) {
     <div className="rounded-2xl border border-white/[0.08] bg-[#090a0d] p-5">
       <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">{label}</p>
       <p className="mt-3 text-3xl font-semibold text-white">{value}</p>
+    </div>
+  )
+}
+
+function SidePanel({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-white/[0.08] bg-[#090a0d] p-6">
+      <h2 className="text-xl font-semibold">{title}</h2>
+      <div className="mt-4">{children}</div>
+    </div>
+  )
+}
