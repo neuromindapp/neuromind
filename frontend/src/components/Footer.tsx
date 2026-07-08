@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Github } from 'lucide-react'
+import { ContractAddress } from '@/components/ContractAddress'
 
 const xUrl = 'https://x.com/NeuroMindStudy'
 const githubUrl = 'https://github.com/neuromindapp/neuromind'
@@ -22,6 +23,9 @@ export function Footer() {
             <p className="mt-4 max-w-lg text-sm leading-7 text-slate-400">
               NeuroMind turns live prediction markets into research briefs, probability estimates, and resolution-risk notes. It does not custody funds or place trades.
             </p>
+            <div className="mt-5">
+              <ContractAddress variant="footer" />
+            </div>
             <a
               href={xUrl}
               target="_blank"

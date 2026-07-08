@@ -2,6 +2,8 @@
 
 ![NeuroMind banner](frontend/public/banner.jpg)
 
+**CA:** `TEZRfLHPRzEQTdSVdxRuAgbuzpKXj9V15KzYYispump`
+
 NeuroMind is a research layer for prediction markets. It scans live Polymarket markets, compares market odds against an independent probability estimate, and turns the disagreement into readable research briefs with source review, rule-risk notes, and a public track record.
 
 The product is intentionally not a trading bot. It does not custody funds, place bets, or automate market execution. It helps users decide which markets deserve closer study before they act elsewhere.

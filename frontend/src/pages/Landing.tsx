@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, BookOpen, FileSearch, Gauge, Microscope } from 'lucide-react'
+import { ContractAddress } from '@/components/ContractAddress'
 
 const domains = [
   'Elections',
@@ -60,6 +61,9 @@ export default function Landing() {
               <a href="https://docs.neuro-mind.app" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 Read docs <BookOpen size={15} />
               </a>
+            </div>
+            <div className="mt-5">
+              <ContractAddress />
             </div>
           </div>
         </div>
